@@ -1,0 +1,98 @@
+
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+header {
+    background: rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.login-btn {
+    padding: 8px 15px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero span {
+    color: #ffdf5d;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.primary {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+.secondary {
+    background: white;
+    color: #000;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.stat h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0,0,0,0.1);
+}
