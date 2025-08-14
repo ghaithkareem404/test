@@ -1,0 +1,71 @@
+/* components.css: أزرار، بطاقات، شارات، أقسام */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem; padding:.55rem .9rem; border-radius:.6rem; border:1px solid transparent;
+  font-weight:700; cursor:pointer; transition: transform .08s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  text-decoration:none
+}
+.btn:active{transform: translateY(1px)}
+.btn-primary{background: var(--primary); color:#fff; box-shadow: 0 6px 14px rgba(29,78,216,.25)}
+.btn-primary:hover{text-decoration:none; filter: brightness(1.05)}
+.btn-outline{background:#fff; color:var(--primary); border-color: var(--primary)}
+.btn-outline:hover{background: rgba(29,78,216,.06); text-decoration:none}
+.btn-link{padding:0; border:none; color:var(--primary)}
+.btn[disabled]{opacity:.5; cursor:not-allowed}
+
+/* Cards */
+.cards{display:grid; gap:1rem}
+.cards.two{grid-template-columns: repeat(2,minmax(0,1fr))}
+.cards.three{grid-template-columns: repeat(3,minmax(0,1fr))}
+.card{
+  background:#fff; border-radius: var(--radius);
+  box-shadow: var(--shadow); padding:1rem; overflow:hidden
+}
+.card h3{margin:0 0 .35rem}
+.card p{margin:.25rem 0 .5rem}
+.card .value-list{margin:.5rem 0 0 0; padding-inline-start:1.1rem}
+.card .value-list li{margin:.2rem 0}
+
+/* Testimonials */
+.testimonial{position:relative}
+.testimonial .author{display:flex; align-items:center; gap:.5rem; margin-top:.5rem; color:var(--muted)}
+
+/* Chips / badges */
+.chips{display:flex; flex-wrap:wrap; gap:.5rem}
+.chip{display:inline-flex; align-items:center; padding:.35rem .7rem; background:var(--beige); border-radius:999px; font-weight:600}
+
+/* People */
+.person .avatar{
+  width:48px; height:48px; border-radius:50%; background:#e9efff; display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--primary-dark); margin-bottom:.5rem
+}
+
+/* Check list */
+.check-list{list-style:none; padding:0; margin:.5rem 0}
+.check-list li{
+  position:relative; padding-inline-start:1.5rem; margin:.35rem 0
+}
+.check-list li::before{
+  content:""; position:absolute; inset-inline-start:0; top:.5rem; width:.75rem; height:.75rem; border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #fff 30%, var(--primary) 31%, var(--primary) 100%);
+  box-shadow:0 0 0 2px rgba(29,78,216,.15)
+}
+
+/* Steps (ordered) */
+.steps{counter-reset: step; list-style:none; padding:0; margin:0}
+.steps li{
+  counter-increment: step; margin:.35rem 0; padding:.35rem .6rem; background:#fff; border-radius:.6rem; box-shadow: var(--shadow)
+}
+.steps li::before{
+  content: counter(step) ". "; font-weight:700; color: var(--primary); margin-inline-end:.25rem
+}
+
+/* Logo grid */
+.logo-grid img{
+  filter: grayscale(100%) contrast(110%);
+  opacity:.85; transition: opacity .2s ease, filter .2s ease
+}
+.logo-grid img:hover{opacity:1; filter: grayscale(0%)}
+
+/* Posts */
+.post h3{margin:0 0 .25rem}
+.post .btn-link{margin-top:.35rem; font-weight:700}
