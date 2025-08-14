@@ -20,4 +20,132 @@
   <div class="container nav-inner">
     <a class="brand" href="index.html"><img src="assets/img/logo-placeholder.svg" alt="" width="28" height="28"/><span>UpKnowledge</span></a>
     <nav class="nav-links">
-      <a href="index.html" data-i18n="
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="hr.html" data-i18n="nav.hr">الموارد البشرية</a>
+      <a href="it.html" data-i18n="nav.it">تقنية المعلومات</a>
+      <a href="odoo.html" data-i18n="nav.odoo">Odoo</a>
+      <a href="about.html" data-i18n="nav.about">من نحن</a>
+      <a href="blog.html" data-i18n="nav.blog">المدونة</a>
+      <a href="contact.html" class="btn btn-primary active" data-i18n="nav.consult">اطلب استشارة</a>
+    </nav>
+    <button id="langSwitcher" class="lang-switch" data-i18n="nav.lang">EN</button>
+    <button id="menuToggle" class="menu-toggle" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/></svg>
+    </button>
+  </div>
+</header>
+<nav id="mobileMenu" class="mobile-menu" hidden>
+  <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+  <a href="hr.html" data-i18n="nav.hr">الموارد البشرية</a>
+  <a href="it.html" data-i18n="nav.it">تقنية المعلومات</a>
+  <a href="odoo.html" data-i18n="nav.odoo">Odoo</a>
+  <a href="about.html" data-i18n="nav.about">من نحن</a>
+  <a href="blog.html" data-i18n="nav.blog">المدونة</a>
+  <a href="contact.html" class="btn btn-primary active" data-i18n="nav.consult">اطلب استشارة</a>
+  <button id="mobileLang" class="lang-switch" data-i18n="nav.lang">EN</button>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1 data-i18n="contact.title">تواصل معنا</h1>
+      <p class="lead" data-i18n="contact.subtitle">يسعدنا إجابة أسئلتك وتقديم الاستشارة المناسبة.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container two-col">
+      <!-- نموذج التواصل -->
+      <div class="col">
+        <!-- 
+          ملاحظة المزوّد:
+          - لا توجد مكتبات خارجية JS (مسموح فقط Google Fonts)
+          - لدعم الإرسال بدون باك-إند، وفّرنا خيارين:
+            1) Formspree: استخدم action الجاهز (Placeholder) method="POST"
+            2) EmailJS: حدّد data-provider="emailjs" وأدخل service_id/template_id/public_key في main.js
+        -->
+        <form id="contactForm" class="card form" novalidate data-provider="formspree" action="https://formspree.io/f/your_form_id" method="POST">
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="name" data-i18n="contact.name_label">الاسم الكامل</label>
+              <input id="name" name="name" type="text" required placeholder="الاسم" autocomplete="name"/>
+            </div>
+            <div class="form-group">
+              <label for="company" data-i18n="contact.company_label">الشركة</label>
+              <input id="company" name="company" type="text" placeholder="اسم الشركة" autocomplete="organization"/>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact.email_label">البريد الإلكتروني</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email"/>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="contact.phone_label">الهاتف</label>
+              <input id="phone" name="phone" type="tel" placeholder="+964..." autocomplete="tel"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service" data-i18n="contact.service_label">نوع الخدمة</label>
+            <select id="service" name="service" required>
+              <option value="" data-i18n="contact.service_placeholder">اختر خدمة</option>
+              <option value="hr" data-i18n="contact.service_hr">HR</option>
+              <option value="it" data-i18n="contact.service_it">IT</option>
+              <option value="odoo" data-i18n="contact.service_odoo">Odoo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-i18n="contact.msg_label">الرسالة</label>
+            <textarea id="message" name="message" rows="5" required placeholder="كيف يمكننا مساعدتك؟"></textarea>
+          </div>
+
+          <!-- Honeypot (حقل مخفي للروبوتات) -->
+          <div class="hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- تنبيه مهلة ≥ 2s: سيبدأ المؤقت عند تحميل الصفحة -->
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" data-i18n="contact.submit">إرسال</button>
+            <p id="formStatus" role="status" aria-live="polite" class="muted"></p>
+          </div>
+        </form>
+
+        <div class="note muted" data-i18n="contact.note">* لن نشارك بياناتك مع أي طرف ثالث.</div>
+      </div>
+
+      <!-- معلومات التواصل -->
+      <div class="col">
+        <div class="card">
+          <h3 data-i18n="contact.info_title">معلومات التواصل</h3>
+          <ul class="contact-list">
+            <li><strong data-i18n="contact.email_label">البريد الإلكتروني</strong>: <a href="mailto:info@upknowledge.co">info@upknowledge.co</a></li>
+            <li><strong data-i18n="contact.phone_label">الهاتف</strong>: <a href="tel:+964000000000">+964 000 000 0000</a></li>
+            <li><strong>WhatsApp</strong>: <a href="#" target="_blank" rel="noopener">تواصل مباشرة</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="contact.map_title">الموقع (خريطة)</h3>
+          <!-- Placeholder خريطة Google -->
+          <div class="map-placeholder" role="img" aria-label="Google Map Placeholder">
+            <span data-i18n="contact.map_placeholder">خريطة Google (Placeholder)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footnote">
+    <small>&copy; <span id="year"></span> UpKnowledge · <a href="index.html" data-i18n="footer.home_link">العودة للرئيسية</a></small>
+  </div>
+</footer>
+
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
