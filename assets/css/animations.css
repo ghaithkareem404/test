@@ -1,0 +1,10 @@
+/* animations.css: انتقالات وتركيز */
+:root{
+  --focus-ring: 0 0 0 3px rgba(29,78,216,.35);
+}
+
+/* Hover/fade-ins */
+.card, .btn, .brand, .nav-links a, .logo-grid img{ transition: transform .15s ease, box-shadow .25s ease, opacity .2s ease }
+.card:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(15,33,71,.12) }
+.btn:focus, a:focus{ outline: none; box-shadow: var(--focus-ring); border-radius:.6rem }
+.navbar{ transition: background .25s ease, box-shadow .25s ease }
